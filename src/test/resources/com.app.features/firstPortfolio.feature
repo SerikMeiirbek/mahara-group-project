@@ -1,5 +1,5 @@
 Feature: Create a new Journal 
-@thisclass
+
 
 	Scenario: Create a new Journal
 	Given I logged into Mahara as username "sanjar" and password "112233uuu"
