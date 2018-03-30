@@ -13,6 +13,7 @@ import com.app.utilities.Driver;
 public class MaharaPersonalInformationPage {
 	private WebDriver driver;
 
+	
 	public MaharaPersonalInformationPage() {
 		this.driver = Driver.getDriver();
 		PageFactory.initElements(driver, this);
@@ -20,7 +21,7 @@ public class MaharaPersonalInformationPage {
 
 	@FindBy(id = "personalinformation_dateofbirth")
 	public WebElement dateOfBirth;
-
+	
 	@FindBy(id = "personalinformation_placeofbirth")
 	public WebElement placeOfBirth;
 
