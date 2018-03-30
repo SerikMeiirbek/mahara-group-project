@@ -1,4 +1,4 @@
-package com.app.pages;
+package com.app.pages.résumé;
 
 import java.util.NoSuchElementException;
 
@@ -46,24 +46,25 @@ public class MaharaPersonalInformationPage {
 	@FindBy(id = "personalinformation_save")
 	public WebElement save;
 
+	
 	public void selectGender(String gender) {
 		switch (gender) {
 		case "Woman":
 			try {
 				Woman.click();
 			} catch (NoSuchElementException e) {
-				System.out.println("Checkbox Woman wasn't been selected");
+				System.out.println("Checkbox Woman isn't  selected");
 			}
 
 		case "Man":
 			try {
 				Man.click();
 			} catch (NoSuchElementException e) {
-				System.out.println("CheckBox Man wasn't been selected");
+				System.out.println("CheckBox Man isn't  selected");
 			}
 
 		default:
-			selectedByDefault.click();
+			
 
 		}
 	}
@@ -74,14 +75,14 @@ public class MaharaPersonalInformationPage {
 			try {
 				return Woman.isSelected();
 			} catch (NoSuchElementException e) {
-				System.out.println("Checkbox Woman wasn't been selected");
+				System.out.println("Checkbox Woman isn't  selected");
 			}
 
 		case "Man":
 			try {
 				return Man.isSelected();
 			} catch (NoSuchElementException e) {
-				System.out.println("CheckBox Man wasn't been selected");
+				System.out.println("CheckBox Man isn't been selected");
 			}
 
 		default:

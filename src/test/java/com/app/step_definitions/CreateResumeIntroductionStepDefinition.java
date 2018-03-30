@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.app.pages.MaharaDashboardPage;
-import com.app.pages.MaharaPersonalInformationPage;
+import com.app.pages.résumé.MaharaPersonalInformationPage;
 import com.app.utilities.BrowserUtils;
 import com.app.utilities.Driver;
 
@@ -118,7 +118,7 @@ public class CreateResumeIntroductionStepDefinition {
 
 	@Then("^I should see Gender as \"([^\"]*)\"$")
 	public void i_should_see_Gender_as(String gender) {
-		//assertTrue(informationPage.isSelectGender(gender));
+		assertTrue(informationPage.isSelectGender(gender));
 	}
 
 	@Then("^I should see marital status \"([^\"]*)\"$")
