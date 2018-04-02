@@ -1,15 +1,15 @@
 package com.app.step_definitions;
 
-import org.openqa.selenium.WebDriver;
-
 import com.app.pages.MaharaLoginPage;
 import com.app.utilities.ConfigurationReader;
 import com.app.utilities.Driver;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+
+
 
 public class CreateContentJournal {
 
@@ -17,6 +17,7 @@ public class CreateContentJournal {
 
 	@Given("^I logged into Mahara as username \"([^\"]*)\" and password \"([^\"]*)\"$")
 	public void i_logged_into_Mahara_as_username_and_password(String userName, String password) {
+		
 		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
 		loginpage.signIn(userName, password);
@@ -25,7 +26,7 @@ public class CreateContentJournal {
 
 	@When("^I click on Journals$")
 	public void i_click_on_Journals() {
-
+		
 	}
 
 	@When("^I entered new Title as \"([^\"]*)\"$")
