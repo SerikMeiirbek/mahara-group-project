@@ -13,6 +13,7 @@ public class MaharaDashboardPage {
 	
 	
 	
+	
 	public MaharaDashboardPage() {
 		this.driver = Driver.getDriver();
 		PageFactory.initElements(driver, this);

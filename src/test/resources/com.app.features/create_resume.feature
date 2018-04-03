@@ -1,5 +1,5 @@
+@thisone
 Feature: Create resume
-
 
   Scenario: Filling Introduction form
     Given I logged into Mahara as username "sanjar" and password "112233uuu"
@@ -17,7 +17,6 @@ Feature: Create resume
     Then I should see Gender as "Man"
     Then I should see marital status "Single"
 
-
   Scenario: Filing Education and employment form
     Given I logged into Mahara as username "sanjar" and password "112233uuu"
     When I click on Resume
@@ -33,7 +32,6 @@ Feature: Create resume
     When I click save
     Then I should see institution "IKTU"
 
- 
   Scenario: Filling Certifications form
     Given I logged into Mahara as username "sanjar" and password "112233uuu"
     When I click on Resume
@@ -44,10 +42,9 @@ Feature: Create resume
     And I enter Description "java for everyone"
     When I click save button
     Then I should see "Java"
-    
 
   Scenario: Filling Books and publications
-  	  Given I logged into Mahara as username "sanjar" and password "112233uuu"
+    Given I logged into Mahara as username "sanjar" and password "112233uuu"
     When I click on Resume
     And I click on Achievements
     And I click add on Books and publications
@@ -57,9 +54,8 @@ Feature: Create resume
     And I enter Details of your contribution "how pass java certification"
     When I click addBook save
     Then I should see book Title "Java"
-   
-  @thisclass
-    Scenario: Filling Professional memberships form
+
+  Scenario: Filling Professional memberships form
     Given I logged into Mahara as username "sanjar" and password "112233uuu"
     When I click on Resume
     And I click on Achievements
