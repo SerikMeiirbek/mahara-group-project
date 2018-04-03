@@ -1,4 +1,4 @@
-package com.app.pages.résumé;
+package com.app.pages�sumé;
 
 import java.util.NoSuchElementException;
 
