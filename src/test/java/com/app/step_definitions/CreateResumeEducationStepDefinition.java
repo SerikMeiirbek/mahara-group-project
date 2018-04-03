@@ -2,7 +2,7 @@ package com.app.step_definitions;
 
 import static org.testng.Assert.assertTrue;
 
-import com.app.pages.résumé.MaharaEducationAndEmploymentPage;
+import com.app.pages.MaharaEducationAndEmploymentPage;
 import com.app.utilities.BrowserUtils;
 
 import cucumber.api.java.en.Then;
