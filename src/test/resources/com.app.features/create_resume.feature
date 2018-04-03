@@ -1,6 +1,5 @@
 Feature: Create resume
 
-
   Scenario: Filling Introduction form
     Given I logged into Mahara as username "sanjar" and password "112233uuu"
     When I click on Resume
@@ -58,7 +57,6 @@ Feature: Create resume
     When I click addBook save
     Then I should see book Title "Java"
    
-  @thisclass
     Scenario: Filling Professional memberships form
     Given I logged into Mahara as username "sanjar" and password "112233uuu"
     When I click on Resume

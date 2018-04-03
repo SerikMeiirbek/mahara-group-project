@@ -1,9 +1,9 @@
-Feature: Create a new page
 
+Feature: Create a new page
+	@one
   Scenario: Create a new page 
-    Given I logged into Mahara as username "admin" and password "abc123"
-    Then I click on add Pages and collections
-    And I click on add Page
+    Given I logged into Mahara as username "sopist" and password "abc1234"
+    Then I click add new page
     And I enter the page title as "New Page"
     And I enter the page description  as "more information"
     And I save the page
