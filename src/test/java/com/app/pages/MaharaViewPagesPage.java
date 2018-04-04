@@ -18,4 +18,13 @@ public class MaharaViewPagesPage {
 	
 	@FindBy(id = "viewh1")
 	public WebElement titleOnPage;
+
+	@FindBy(xpath = "//div[@class='with-heading text-small']/a")
+	public WebElement nameDisplay;
+	
+	@FindBy(xpath = "//img[@itemprop='contentURL']")
+	public WebElement theImage;
+	
+	@FindBy(xpath= "//div[contains(@id,'blockinstance_')]/h3")
+	public WebElement imageBlock;
 }
