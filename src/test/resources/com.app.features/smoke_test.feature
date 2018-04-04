@@ -1,7 +1,8 @@
+#@smoke
 Feature: Pages and collections smoke test
-
+	@smoke
   Scenario: Pages and collections smoke test
-    Given I logged into Mahara as username "admin" and password "abc123"
+    Given I logged into Mahara as username "sopist" and password "abc1234"
     Then I click add new page
     And I enter the page title as "New Page"
     And I save the page
