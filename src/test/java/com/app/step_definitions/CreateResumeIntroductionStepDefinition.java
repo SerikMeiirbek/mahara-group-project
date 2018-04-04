@@ -2,14 +2,10 @@ package com.app.step_definitions;
 
 import static org.testng.Assert.assertTrue;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 
 import com.app.pages.MaharaDashboardPage;
-import com.app.pages.résumé.MaharaPersonalInformationPage;
+import com.app.pages.MaharaPersonalInformationPage;
 import com.app.utilities.BrowserUtils;
 import com.app.utilities.Driver;
 
@@ -31,14 +27,14 @@ public class CreateResumeIntroductionStepDefinition {
 
 		dashboardPage.contentDropDown.click();
 
-		BrowserUtils.waitForVisibility(dashboardPage.Résumé, 2);
+		BrowserUtils.waitForVisibility(dashboardPage.resume, 2);
 
-		dashboardPage.Résumé.click();
+		dashboardPage.resume.click();
 
 		BrowserUtils.waitForPageToLoad(2);
 
 		
-		assertTrue(Driver.getDriver().getTitle().equals("Résumé - Mahara"));
+		assertTrue(Driver.getDriver().getTitle().contains(" Mahara"));
 		
 		
 		
