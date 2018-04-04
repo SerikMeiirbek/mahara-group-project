@@ -1,7 +1,10 @@
 package com.app.step_definitions;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
+
+import org.testng.internal.EclipseInterface;
 
 import com.app.pages.MaharaCreatePagesPage;
 import com.app.pages.MaharaDashboardPage;
@@ -57,6 +60,7 @@ public class CreatePageStepDefinitions {
 
 	@Then("^I save the page$")
 	public void i_save_the_page() {
+		BrowserUtils.waitForVisibility(createPage.save, 2);
 		createPage.save.click();
 		assertEquals(editPage.messages.getText(), "Page saved successfully");
 	}
@@ -75,5 +79,28 @@ public class CreatePageStepDefinitions {
 	@Then("^the page description is \"([^\"]*)\"$")
 	public void the_page_description_is(String description) {
 		assertEquals(editPage.viewDescription.getText(), description);
+	}
+
+	@Then("^I choose \"([^\"]*)\" display format$")
+	public void i_choose_display_format(String format) {
+		createPage.selectNameFormat(format);
+	}
+	
+	@Then("^I should see name display format as \"([^\"]*)\"$")
+	public void i_should_see_name_display_format_as(String nameDisplay) {
+		 assertEquals(viewPage.nameDisplay.getText(), nameDisplay);
+	}
+	
+	@Then("^I add an image into the page$")
+	public void i_add_an_image_into_the_page() {
+		assertTrue(editPage.imageIcon.isDisplayed());
+		editPage.addImage();
+		BrowserUtils.waitForVisibility(editPage.theImage, 3);
+	}
+
+	@Then("^I should see the image on the page$")
+	public void i_should_see_the_image_on_the_page() {
+	    assertTrue(viewPage.theImage.isDisplayed());
+	    assertEquals(viewPage.imageBlock.getText(), "Image");
 	}
 }
