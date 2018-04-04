@@ -1,5 +1,4 @@
-package com.app.pages©sum√©;
-
+package com.app.pages;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;

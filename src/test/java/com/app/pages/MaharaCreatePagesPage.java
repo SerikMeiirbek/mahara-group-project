@@ -1,5 +1,6 @@
 package com.app.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,14 @@ public class MaharaCreatePagesPage {
 	public WebElement nameDisplayFormat;
 	
 	@FindBy(tagName = "iframe")
+	public WebElement iframe;
+	
+	@FindBy(id = "tinymce")
 	public WebElement descriptionField;
 	
+	public void addDescription(String description) {
+		driver.switchTo().frame(iframe);
+		descriptionField.sendKeys(description);
+		driver.switchTo().parentFrame();
+	}	
 }

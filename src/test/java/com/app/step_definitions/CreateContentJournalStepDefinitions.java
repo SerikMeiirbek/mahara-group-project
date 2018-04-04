@@ -11,17 +11,14 @@ import cucumber.api.java.en.When;
 
 
 
-public class CreateContentJournal {
+public class CreateContentJournalStepDefinitions {
 
-	MaharaLoginPage loginpage = new MaharaLoginPage();
-
+	MaharaLoginPage loginPage = new MaharaLoginPage();
+	
 	@Given("^I logged into Mahara as username \"([^\"]*)\" and password \"([^\"]*)\"$")
-	public void i_logged_into_Mahara_as_username_and_password(String userName, String password) {
-		
+	public void i_logged_into_Mahara_as_username_and_password(String username, String password) {
 		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-
-		loginpage.signIn(userName, password);
-
+		loginPage.signIn(username, password);
 	}
 
 	@When("^I click on Journals$")

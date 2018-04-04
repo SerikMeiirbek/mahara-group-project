@@ -25,7 +25,7 @@ public class MaharaDashboardPage {
 	public WebElement resume;
 	
 	@FindBy(xpath="//a[.='Portfolio']")
-	public WebElement Portfolio;
+	public WebElement portfolio;
 	
 	@FindBy(id = "nav")
 	public WebElement navigationList;
