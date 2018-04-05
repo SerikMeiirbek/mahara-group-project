@@ -1,5 +1,7 @@
 package com.app.step_definitions;
 
+import static org.testng.Assert.assertEquals;
+
 import com.app.pages.MaharaLoginPage;
 import com.app.utilities.ConfigurationReader;
 import com.app.utilities.Driver;
@@ -19,6 +21,7 @@ public class CreateContentJournalStepDefinitions {
 	public void i_logged_into_Mahara_as_username_and_password(String username, String password) {
 		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 		loginPage.signIn(username, password);
+		assertEquals(Driver.getDriver().getTitle(), "Dashboard - Mahara");
 	}
 
 	@When("^I click on Journals$")
