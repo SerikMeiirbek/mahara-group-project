@@ -28,7 +28,6 @@ public class CreatePageStepDefinitions {
 
 	@Then("^I click add new page$")
 	public void i_click_add_new_page() {
-		assertEquals(Driver.getDriver().getTitle(), "Dashboard - Mahara");
 		BrowserUtils.waitForVisibility(dashboardPage.navigationBar, 5);
 		dashboardPage.navigationBar.click();
 		assertTrue(dashboardPage.navigationList.isDisplayed());
