@@ -21,6 +21,9 @@ public class MaharaDashboardPage {
 	@FindBy(xpath="//li[@class='content']/button[@class='navbar-showchildren navbar-toggle dropdown-toggle collapsed']")
 	public WebElement contentDropDown;
 	
+	@FindBy(linkText = "Profile")
+	public WebElement profile;
+	
 	@FindBy(linkText="Résumé")
 	public WebElement resume;
 	
