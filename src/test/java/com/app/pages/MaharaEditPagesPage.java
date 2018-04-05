@@ -14,7 +14,7 @@ import com.app.utilities.Driver;
 public class MaharaEditPagesPage {
 	
 	private WebDriver driver;
-	private String filePath = "C:\\Users\\sunsi\\Pictures\\Wallpapers\\lights_beach.jpg";
+	private String filePath = "mahara-group-project/src/test/resources/lights_beach.jpg";
 
 	public MaharaEditPagesPage() {
 		driver = Driver.getDriver();
