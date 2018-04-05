@@ -1,5 +1,7 @@
 package com.app.pages;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,7 +16,6 @@ import com.app.utilities.Driver;
 public class MaharaEditPagesPage {
 	
 	private WebDriver driver;
-	private String filePath = "mahara-group-project/src/test/resources/lights_beach.jpg";
 
 	public MaharaEditPagesPage() {
 		driver = Driver.getDriver();
@@ -57,7 +58,11 @@ public class MaharaEditPagesPage {
 	@FindBy(xpath = "//a/img[starts-with(@alt,'lights_beach.jpg')]")
 	public WebElement theImage;
 	
+	
 	public void addImage() {
+		// get the path to the current project folder -->  System.getProperty("user.dir")
+		String filePath = System.getProperty("user.dir")+"/src/test/resources/lights_beach.jpg";
+		
 		Actions action = new Actions(driver);
 		action.dragAndDrop(imageIcon, row_1_column_2).perform();
 		BrowserUtils.waitForVisibility(imagePopup, 5);
