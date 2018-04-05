@@ -1,8 +1,8 @@
-@thisone
 Feature: Create resume
 
+  @thisone
   Scenario: Filling Introduction form
-    Given I logged into Mahara as username "sanjar" and password "112233uuu"
+    Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
     And I enter Date of birth "1992/12/22"
     And I enter Place of birth "Kazakhstan"
@@ -18,7 +18,7 @@ Feature: Create resume
     Then I should see marital status "Single"
 
   Scenario: Filing Education and employment form
-    Given I logged into Mahara as username "sanjar" and password "112233uuu"
+    Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
     And I click on Education and employment
     And I click button add
@@ -33,7 +33,7 @@ Feature: Create resume
     Then I should see institution "IKTU"
 
   Scenario: Filling Certifications form
-    Given I logged into Mahara as username "sanjar" and password "112233uuu"
+    Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
     And I click on Achievements
     And I click add on Certifications, accreditations and awards
@@ -44,7 +44,7 @@ Feature: Create resume
     Then I should see "Java"
 
   Scenario: Filling Books and publications
-    Given I logged into Mahara as username "sanjar" and password "112233uuu"
+    Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
     And I click on Achievements
     And I click add on Books and publications
@@ -56,7 +56,7 @@ Feature: Create resume
     Then I should see book Title "Java"
 
   Scenario: Filling Professional memberships form
-    Given I logged into Mahara as username "sanjar" and password "112233uuu"
+    Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
     And I click on Achievements
     And click add on Professional memberships
@@ -66,3 +66,28 @@ Feature: Create resume
     And I enter Membership description "healthy life style"
     When I click add membership button
     Then I should see membership title "Golf Club"
+@thissmoketest
+  Scenario: Filling Goals and Skills form
+    Given I logged into Mahara as username "serik" and password "abc1234"
+    When I click on Resume
+    And I click on Goals and skills
+    And I click Personal goals
+    And I enter Personal golas "my goals"
+    When I click save on Goals and skills page
+    Then I should see Saved successfully
+    And I click on Academic Goals
+    And I enter Academic Goals "Academic Goals"
+    When I click save on Goals and skills page
+    Then I should see Saved successfully
+    And I click Career goals
+    And I enter Carrer goals "Carrer goals"
+    When I click save on Goals and skills page
+    Then I should see Saved successfully
+    And I click Personal skills
+    And I enter Personal skills "Personal skills"
+    When I click save on Goals and skills page
+    Then I should see Saved successfully
+    And I click Work skills
+    And I enter Work skills "Work skills"
+    When I click save on Goals and skills page
+    Then I should see Saved successfully

@@ -1,5 +1,6 @@
 package com.app.utilities;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -22,6 +23,7 @@ public class BrowserUtils {
 
 		Actions actions = new Actions(Driver.getDriver());
 		actions.moveToElement(element).perform();
+	
 	}
 
 	/**
