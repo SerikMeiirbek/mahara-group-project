@@ -18,9 +18,13 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserUtils {
+	
+	public static boolean isFieldEmpty(WebElement element, int timeToWaitInSec) {
+		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
+		return wait.until(ExpectedConditions.textToBePresentInElement(element, ""));
+	}
 
 	public static void hover(WebElement element) {
-
 		Actions actions = new Actions(Driver.getDriver());
 		actions.moveToElement(element).perform();
 	

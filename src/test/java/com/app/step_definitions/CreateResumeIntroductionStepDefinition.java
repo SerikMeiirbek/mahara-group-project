@@ -28,14 +28,14 @@ public class CreateResumeIntroductionStepDefinition {
 
 		dashboardPage.contentDropDown.click();
 
-		BrowserUtils.waitForVisibility(dashboardPage.Résumé, 2);
+		BrowserUtils.waitForVisibility(dashboardPage.resume, 2);
 
-		dashboardPage.Résumé.click();
+		dashboardPage.resume.click();
 
 		BrowserUtils.waitForPageToLoad(2);
 
 		
-		assertTrue(Driver.getDriver().getTitle().equals("Résumé - Mahara"));
+		assertTrue(Driver.getDriver().getTitle().contains(" Mahara"));
 		
 		
 		
