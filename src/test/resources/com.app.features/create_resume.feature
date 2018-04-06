@@ -54,7 +54,7 @@ Feature: Create resume
     And I enter Details of your contribution "how pass java certification"
     When I click addBook save
     Then I should see book Title "Java"
-
+	@test
   Scenario: Filling Professional memberships form
     Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
