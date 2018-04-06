@@ -18,17 +18,20 @@ Feature: Pages and collections smoke test
     And I click save profile
     Then I should see text "Profile saved successfully" is displayed
 
-  @ThisMine
+
   
+  @smoke
   Scenario: Resume smoke test
     Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
-    And I click on Edit personal goals
-    And I click save button
-    Then I should see text "Saved successfully" is displayed
+    And I click on Goals and skills
+    And I click Personal goals
+    And I enter Personal golas "my goals"
+    When I click save on Goals and skills page
+    Then I should see Saved successfully
 
   Scenario: Journals smoke test
-    Given I logged into Mahara as username "admin" and password "abc123"
+    Given I logged into Mahara as username "serik" and password "abc1234"
     Then I click Journals on the Content list
     And I click on New entry button
     And I enter "My journal" into Title field

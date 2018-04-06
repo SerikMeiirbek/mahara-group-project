@@ -12,6 +12,7 @@ public class MaharaDashboardPage {
 
 	
 	
+	
 	public MaharaDashboardPage() {
 		this.driver = Driver.getDriver();
 		PageFactory.initElements(driver, this);
@@ -29,6 +30,6 @@ public class MaharaDashboardPage {
 	@FindBy(xpath="//li[@class='myportfolio']/button[@class='navbar-showchildren navbar-toggle dropdown-toggle collapsed']")
 	public WebElement portfolio;
 	
-	
-	
+	@FindBy(xpath="//a[@href=\"http://34.223.219.142:1022/mahara/artefact/blog/index.php\"]")
+	public WebElement journals;
 }

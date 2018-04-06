@@ -66,7 +66,8 @@ Feature: Create resume
     And I enter Membership description "healthy life style"
     When I click add membership button
     Then I should see membership title "Golf Club"
-@thissmoketest
+
+  @thissmoketest
   Scenario: Filling Goals and Skills form
     Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
