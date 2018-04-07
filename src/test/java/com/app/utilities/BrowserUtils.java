@@ -19,6 +19,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserUtils {
 	
+	public static boolean waitToSeeText(WebElement element, int timeToWaitInSec, String text) {
+		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
+		return wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+	}
+	
 	public static boolean isFieldEmpty(WebElement element, int timeToWaitInSec) {
 		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
 		return wait.until(ExpectedConditions.textToBePresentInElement(element, ""));
