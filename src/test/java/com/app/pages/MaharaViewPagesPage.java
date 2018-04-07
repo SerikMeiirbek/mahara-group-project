@@ -27,4 +27,19 @@ public class MaharaViewPagesPage {
 	
 	@FindBy(xpath= "//div[contains(@id,'blockinstance_')]/h3")
 	public WebElement imageBlock;
+	
+	@FindBy(tagName = "iframe")
+	public WebElement iframe;
+	
+	@FindBy(id = "tinymce")
+	public WebElement commentField;
+	
+	@FindBy(id = "add_feedback_heading")
+	public WebElement addCommentText;
+	
+	public void addComment(String comment) {
+		driver.switchTo().frame(iframe);
+		commentField.sendKeys(comment);
+		driver.switchTo().parentFrame();
+	}
 }

@@ -1,5 +1,6 @@
 package com.app.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +12,7 @@ import com.app.utilities.Driver;
 public class MaharaCreatePagesPage {
 
 	private WebDriver driver;
+	public String formatName;
 
 	public MaharaCreatePagesPage() {
 		driver = Driver.getDriver();
@@ -32,8 +34,10 @@ public class MaharaCreatePagesPage {
 	@FindBy(id = "tinymce")
 	public WebElement descriptionField;
 	
-	public String formatName;
-	
+	public void clickOnPage(String page) {
+		driver.findElement(By.linkText(page)).click();
+	}
+		
 	public void addDescription(String description) {
 		driver.switchTo().frame(iframe);
 		descriptionField.sendKeys(description);
