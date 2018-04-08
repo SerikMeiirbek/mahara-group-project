@@ -23,7 +23,6 @@ public class MaharaDashboardPage {
 	
 	@FindBy(linkText = "Profile")
 	public WebElement profile;
-	
 
 	@FindBy(xpath="//li[@class='myportfolio']/button[@class='navbar-showchildren navbar-toggle dropdown-toggle collapsed']")
 	public WebElement portfolio;
@@ -36,9 +35,26 @@ public class MaharaDashboardPage {
 	
 	@FindBy(id = "nav")
 	public WebElement navigationList;
-
-
 	
 	@FindBy(xpath="//a[@href=\"http://34.223.219.142:1022/mahara/artefact/blog/index.php\"]")
 	public WebElement journals;
+
+
+	public void clickOnContectList(String menu) {
+		contentDropDown.click();
+		
+		switch(menu) {
+		case "Journals":
+			journals.click();
+			break;
+		case "Profile":
+			profile.click();
+			break;
+		case "Résumé":
+			resume.click();
+			break;
+		}
+		
+	}
+	
 }

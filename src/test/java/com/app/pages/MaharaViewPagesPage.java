@@ -37,6 +37,15 @@ public class MaharaViewPagesPage {
 	@FindBy(id = "add_feedback_heading")
 	public WebElement addCommentText;
 	
+	@FindBy(id = "add_feedback_form_submit")
+	public WebElement commentButton;
+	
+	@FindBy(id = "messages")
+	public WebElement messages;
+	
+	@FindBy(className = "comment-content")
+	public WebElement commentContent;
+	
 	public void addComment(String comment) {
 		driver.switchTo().frame(iframe);
 		commentField.sendKeys(comment);
