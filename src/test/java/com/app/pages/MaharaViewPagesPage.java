@@ -1,5 +1,7 @@
 package com.app.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,11 +46,26 @@ public class MaharaViewPagesPage {
 	public WebElement messages;
 	
 	@FindBy(className = "comment-content")
-	public WebElement commentContent;
+	public List<WebElement> commentContent;
+	
+	@FindBy(id = "add_feedback_form_attachments_files_0")
+	public WebElement chooseFile;
+	
+	@FindBy(tagName = "em")
+	public WebElement attachedMessage;
 	
 	public void addComment(String comment) {
 		driver.switchTo().frame(iframe);
 		commentField.sendKeys(comment);
 		driver.switchTo().parentFrame();
+	}
+	
+	public void addImage() {
+		String filePath = System.getProperty("user.dir")+"/src/test/resources/lights_beach.jpg";
+		chooseFile.sendKeys(filePath);
+	}
+	
+	public String currentComment() {
+		return commentContent.get(commentContent.size()-1).getText();
 	}
 }
