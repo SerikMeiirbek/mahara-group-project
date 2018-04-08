@@ -1,4 +1,3 @@
-@thisone
 Feature: Comment on pages
 	
   Scenario: Text comment
