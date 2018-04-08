@@ -32,7 +32,7 @@ public class CreatePageStepDefinitions {
 		dashboardPage.navigationBar.click();
 		assertTrue(dashboardPage.navigationList.isDisplayed());
 		BrowserUtils.waitForVisibility(dashboardPage.portfolio, 5);
-		dashboardPage.portfolio.click();
+		dashboardPage.portfolio1.click();
 		
 		assertEquals(Driver.getDriver().getTitle(), "Pages and collections - Mahara");
 		BrowserUtils.waitForVisibility(portfolioPage.addviewButton, 5);
