@@ -1,6 +1,6 @@
-
+@thisone
 Feature: Comment on pages
-	@thisone
+	
   Scenario: Text comment
     Given I logged into Mahara as username "sopist" and password "abc1234"
     Then I click on "New Page" page
@@ -19,8 +19,7 @@ Feature: Comment on pages
 
   Scenario: Attach file comment
     Given I logged into Mahara as username "sopist" and password "abc1234"
-    Then I click on add Pages and collections
-    And I click on "New Page" page
+    Then I click on "New Page" page
     And I attach file
     And I click Comment
     Then I should see the file attached
