@@ -16,11 +16,12 @@ public class ProfilePageStepDefinitions {
 	MaharaProfilePage profilePage = new MaharaProfilePage();
 	
 	@Then("^I click \"([^\"]*)\" on the Content list$")
-	public void i_click_on_the_Content_list(String arg1) {
+	public void i_click_on_the_Content_list(String menu) {
 		dashboardPage.navigationBar.click();
 		BrowserUtils.waitForVisibility(dashboardPage.navigationList, 2);
-		dashboardPage.contentDropDown.click();
-		dashboardPage.profile.click();
+//		dashboardPage.contentDropDown.click();
+//		dashboardPage.profile.click();
+		dashboardPage.clickOnContectList(menu);
 		assertEquals(Driver.getDriver().getTitle(), "Profile - Mahara");
 	}
 
