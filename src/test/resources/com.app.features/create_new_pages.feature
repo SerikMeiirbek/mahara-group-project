@@ -1,4 +1,3 @@
-@sopist
 Feature: Create a new page
 
   Scenario: Create a new page 
