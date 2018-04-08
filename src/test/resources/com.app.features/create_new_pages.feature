@@ -1,6 +1,6 @@
-
+@sopist
 Feature: Create a new page
-	@one
+
   Scenario: Create a new page 
     Given I logged into Mahara as username "sopist" and password "abc1234"
     Then I click add new page
