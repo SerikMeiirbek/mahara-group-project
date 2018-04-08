@@ -12,10 +12,11 @@ import com.app.utilities.BrowserUtils;
 import com.app.utilities.Driver;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 
 public class CommentOnPageStepDefiniftions {
-	
+
 	MaharaDashboardPage dashboardPage = new MaharaDashboardPage();
 	MaharaPortfolioPage portfolioPage = new MaharaPortfolioPage();
 	MaharaCreatePagesPage createPage = new MaharaCreatePagesPage();
@@ -29,10 +30,10 @@ public class CommentOnPageStepDefiniftions {
 		assertTrue(dashboardPage.navigationList.isDisplayed());
 		BrowserUtils.waitForVisibility(dashboardPage.portfolio, 5);
 		dashboardPage.portfolio1.click();
-		
+
 		assertEquals(Driver.getDriver().getTitle(), "Pages and collections - Mahara");
 		createPage.clickOnPage(page);
-		assertEquals(Driver.getDriver().getTitle(), page+" - Mahara");
+		assertEquals(Driver.getDriver().getTitle(), page + " - Mahara");
 	}
 
 	@Then("^I comment \"([^\"]*)\" into the add comment box$")
@@ -50,7 +51,17 @@ public class CommentOnPageStepDefiniftions {
 	public void i_should_see_comment(String comment) {
 		BrowserUtils.waitForVisibility(viewPage.messages, 3);
 		assertEquals(viewPage.messages.getText(), "Comment submitted");
-		assertEquals(viewPage.commentContent.getText(), comment, viewPage.commentContent.getText());
+		assertEquals(viewPage.currentComment(), comment);
+	}
+
+	@And("^I attach file$")
+	public void i_attach_file() {
+		viewPage.addImage();
+	}
+
+	@And("^I should see the file attached$")
+	public void i_should_see_the_file_attached() {
+		assertTrue(viewPage.attachedMessage.isDisplayed());
 	}
 
 }
