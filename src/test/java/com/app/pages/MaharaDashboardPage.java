@@ -40,7 +40,7 @@ public class MaharaDashboardPage {
 	@FindBy(id = "nav")
 	public WebElement navigationList;
 	
-	@FindBy(xpath="//a[@href=\"http://34.223.219.142:1022/mahara/artefact/blog/index.php\"]") 
+	@FindBy(xpath="//a[@href=\\\"http://34.223.219.142:1022/mahara/artefact/blog/index.php\\\"]") 
 	public WebElement journals;
 	
 	@FindBy(xpath="//ul[@id='childmenu-1']/li/a")
