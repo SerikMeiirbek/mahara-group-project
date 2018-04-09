@@ -1,3 +1,4 @@
+@smoke
 Feature: Mahara Smoke test
 
   Scenario: Pages and collections smoke test
@@ -25,7 +26,7 @@ Feature: Mahara Smoke test
     And I enter Personal golas "my goals"
     When I click save on Goals and skills page
     Then I should see Saved successfully
-@smoke
+
   Scenario: Journals smoke test
     Given I logged into Mahara as username "sopist" and password "abc1234"
     Then I click "Journals" on the Content list
