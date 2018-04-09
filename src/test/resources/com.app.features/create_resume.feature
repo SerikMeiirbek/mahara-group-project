@@ -1,9 +1,5 @@
 Feature: Create resume
 
-<<<<<<< HEAD
-  @thisone
-=======
->>>>>>> branch 'master' of https://github.com/sanjardoschanov/mahara-group-project
   Scenario: Filling Introduction form
     Given I logged into Mahara as username "serik" and password "abc1234"
     When I click on Resume
@@ -57,15 +53,14 @@ Feature: Create resume
     And I enter Details of your contribution "how pass java certification"
     When I click addBook save
     Then I should see book Title "Java"
-<<<<<<< HEAD
+
 	@test
   Scenario: Filling Professional memberships form
     Given I logged into Mahara as username "serik" and password "abc1234"
-=======
    
     Scenario: Filling Professional memberships form
     Given I logged into Mahara as username "sanjar" and password "112233uuu"
->>>>>>> branch 'master' of https://github.com/sanjardoschanov/mahara-group-project
+
     When I click on Resume
     And I click on Achievements
     And click add on Professional memberships
