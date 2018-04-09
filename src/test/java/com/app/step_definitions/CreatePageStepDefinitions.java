@@ -86,5 +86,12 @@ public class CreatePageStepDefinitions {
 		editPage.addImage();
 		BrowserUtils.waitForVisibility(editPage.theImage, 3);
 	}
+	
+	@Then("^I change page title as \"([^\"]*)\"$")
+	public void i_change_page_title_as(String title) {
+	    assertTrue(createPage.settingsText.isDisplayed());
+	    createPage.titleField.clear();
+	    createPage.titleField.sendKeys(title);
+	}
 
 }
