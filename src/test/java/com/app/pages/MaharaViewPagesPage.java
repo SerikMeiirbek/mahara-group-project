@@ -27,8 +27,8 @@ public class MaharaViewPagesPage {
 	@FindBy(xpath = "//img[@itemprop='contentURL']")
 	public WebElement theImage;
 	
-	@FindBy(xpath= "//div[contains(@id,'blockinstance_')]/h3")
-	public WebElement imageBlock;
+	@FindBy(xpath= "//div[@id='row_1_column_2']//img")
+	public List<WebElement> imageBlocks;
 	
 	@FindBy(tagName = "iframe")
 	public WebElement iframe;
@@ -54,6 +54,18 @@ public class MaharaViewPagesPage {
 	@FindBy(tagName = "em")
 	public WebElement attachedMessage;
 	
+	@FindBy(xpath = "//a[@title='Edit this page']")
+	public WebElement editPageButton;
+	
+	@FindBy(id = "row_1_column_1")
+	public WebElement row_1_column_1;
+	
+	@FindBy(xpath = "//div[starts-with(@id, 'blockinstance_')]")
+	public WebElement addedTab;
+	
+	@FindBy(xpath = "//div[@id='row_1_column_1']//div[@class='block']")
+	public List<WebElement> messageOnTextTab;
+	
 	public void addComment(String comment) {
 		driver.switchTo().frame(iframe);
 		commentField.sendKeys(comment);
@@ -67,5 +79,13 @@ public class MaharaViewPagesPage {
 	
 	public String currentComment() {
 		return commentContent.get(commentContent.size()-1).getText();
+	}
+	
+	public String getMessageOnTab() {
+		return messageOnTextTab.get(messageOnTextTab.size()-1).getText();
+	}
+	
+	public WebElement getImageWebElement() {
+		return imageBlocks.get(imageBlocks.size()-1);
 	}
 }

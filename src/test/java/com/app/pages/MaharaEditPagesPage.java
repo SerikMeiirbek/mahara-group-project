@@ -36,7 +36,7 @@ public class MaharaEditPagesPage {
 	public WebElement row_1_column_2;
 	
 	@FindBy(xpath = "//div[@class='modal-dialog modal-lg']")
-	public WebElement imagePopup;
+	public WebElement tabPopup;
 	
 	@FindBy(xpath = "//div[@class='modal-dialog modal-lg']//h4[@class='modal-title blockinstance-header text-inline']")
 	public WebElement imagePopupTitle;
@@ -56,6 +56,23 @@ public class MaharaEditPagesPage {
 	@FindBy(xpath = "//a/img[starts-with(@alt,'lights_beach.jpg')]")
 	public WebElement theImage;
 	
+	@FindBy(xpath = "//h1/span[2]")
+	public WebElement editText;
+	
+	@FindBy(xpath = "//label[.='Text']")
+	public WebElement textTab;
+	
+	@FindBy(id = "row_1_column_1")
+	public WebElement row_1_column_1;
+	
+	@FindBy(xpath = "//button[starts-with(@id,'instconf_action_configureblockinstance_id_')]")
+	public WebElement saveTextTab;
+	
+	@FindBy(tagName = "iframe")
+	public WebElement iframe;
+	
+	@FindBy(id = "tinymce")
+	public WebElement descriptionField;
 	
 	public void addImage() {
 		// get the path to the current project folder -->  System.getProperty("user.dir")
@@ -63,7 +80,7 @@ public class MaharaEditPagesPage {
 		
 		Actions action = new Actions(driver);
 		action.dragAndDrop(imageIcon, row_1_column_2).perform();
-		BrowserUtils.waitForVisibility(imagePopup, 5);
+		BrowserUtils.waitForVisibility(tabPopup, 5);
 		imageTab.click();
 		BrowserUtils.waitForVisibility(chooseFiles, 2);
 		chooseFiles.sendKeys(filePath);
@@ -74,4 +91,16 @@ public class MaharaEditPagesPage {
 		BrowserUtils.waitFor(1);
 		imagePopupSave.click();
 	}
+	
+	public void addTextTab(String text) {
+		Actions action = new Actions(driver);
+		action.dragAndDrop(textTab, row_1_column_1).perform();;
+		
+		BrowserUtils.waitForVisibility(tabPopup, 5);
+		driver.switchTo().frame(iframe);
+		descriptionField.sendKeys(text);
+		driver.switchTo().parentFrame();
+		saveTextTab.click();
+	}
+
 }
