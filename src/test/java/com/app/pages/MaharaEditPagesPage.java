@@ -74,6 +74,9 @@ public class MaharaEditPagesPage {
 	@FindBy(id = "tinymce")
 	public WebElement descriptionField;
 	
+	@FindBy(linkText = "Settings")
+	public WebElement settings;
+	
 	public void addImage() {
 		// get the path to the current project folder -->  System.getProperty("user.dir")
 		String filePath = System.getProperty("user.dir")+"/src/test/resources/lights_beach.jpg";

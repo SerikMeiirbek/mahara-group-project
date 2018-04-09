@@ -34,6 +34,9 @@ public class MaharaCreatePagesPage {
 	@FindBy(id = "tinymce")
 	public WebElement descriptionField;
 	
+	@FindBy(xpath = "//h1/span[2]")
+	public WebElement settingsText;
+	
 	public void clickOnPage(String page) {
 		driver.findElement(By.linkText(page)).click();
 	}
@@ -56,19 +59,16 @@ public class MaharaCreatePagesPage {
 			break;
 		case "last name":
 			select.selectByValue("2");
-			select.selectByValue("1");
 			text = select.getFirstSelectedOption().getText().trim().split("\\(");
 			formatName = text[1].replace(")", "");
 			break;
 		case "full name":
 			select.selectByValue("3");
-			select.selectByValue("1");
 			text = select.getFirstSelectedOption().getText().trim().split("\\(");
 			formatName = text[1].replace(")", "");
 			break;
 		default:
 			select.selectByValue("6");
-			select.selectByValue("1");
 			text = select.getFirstSelectedOption().getText().trim().split("\\(");
 			formatName = text[1].replace(")", "");
 		}
