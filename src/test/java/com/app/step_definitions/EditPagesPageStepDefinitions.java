@@ -24,6 +24,11 @@ public class EditPagesPageStepDefinitions {
 	public void i_add_more_text_as_into_the_page(String text) {
 	    editPage.addTextTab(text);
 	}
+	
+	@Then("^I click on page settings$")
+	public void i_click_on_page_settings() {
+	    editPage.settings.click();
+	}
 
 
 
