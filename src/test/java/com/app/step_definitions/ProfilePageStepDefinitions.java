@@ -22,7 +22,6 @@ public class ProfilePageStepDefinitions {
 //		dashboardPage.contentDropDown.click();
 //		dashboardPage.profile.click();
 		dashboardPage.clickOnContectList(menu);
-		assertEquals(Driver.getDriver().getTitle(), "Profile - Mahara");
 	}
 
 	@Then("^I enter \"([^\"]*)\" into introduction field$")
