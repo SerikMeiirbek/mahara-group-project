@@ -56,5 +56,11 @@ public class MaharaJournalsPage {
 		return postDescription.get(0).getText();
 	}
 	
+		
+	public WebElement editpost_title;
+	
+	public WebElement editpost_submitpost;
+	
+
 
 }
