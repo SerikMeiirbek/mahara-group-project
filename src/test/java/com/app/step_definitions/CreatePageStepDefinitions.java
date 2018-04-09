@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
+import org.apache.velocity.tools.view.tools.BrowserSnifferTool;
 import org.testng.internal.EclipseInterface;
 
 import com.app.pages.MaharaCreatePagesPage;
@@ -24,7 +25,6 @@ public class CreatePageStepDefinitions {
 	MaharaPortfolioPage portfolioPage = new MaharaPortfolioPage();
 	MaharaCreatePagesPage createPage = new MaharaCreatePagesPage();
 	MaharaEditPagesPage editPage = new MaharaEditPagesPage();
-	MaharaViewPagesPage viewPage = new MaharaViewPagesPage();
 
 	@Then("^I click add new page$")
 	public void i_click_add_new_page() {
@@ -66,13 +66,8 @@ public class CreatePageStepDefinitions {
 
 	@Then("^I click display page$")
 	public void i_click_display_page() {
+		BrowserUtils.waitForClickablility(editPage.displayPage, 5);
 		editPage.displayPage.click();
-	}
-
-	@Then("^I should see page title as \"([^\"]*)\"$")
-	public void i_should_see_page_title_as(String title) {
-		assertEquals(Driver.getDriver().getTitle(), title);
-		assertEquals(viewPage.titleOnPage.getText(), title.replace(" - Mahara", ""));
 	}
 
 	@Then("^the page description is \"([^\"]*)\"$")
@@ -85,11 +80,6 @@ public class CreatePageStepDefinitions {
 		createPage.selectNameFormat(format);
 	}
 	
-	@Then("^I should see name display format as \"([^\"]*)\"$")
-	public void i_should_see_name_display_format_as(String nameDisplay) {
-		 assertEquals(viewPage.nameDisplay.getText(), nameDisplay);
-	}
-	
 	@Then("^I add an image into the page$")
 	public void i_add_an_image_into_the_page() {
 		assertTrue(editPage.imageIcon.isDisplayed());
@@ -97,9 +87,4 @@ public class CreatePageStepDefinitions {
 		BrowserUtils.waitForVisibility(editPage.theImage, 3);
 	}
 
-	@Then("^I should see the image on the page$")
-	public void i_should_see_the_image_on_the_page() {
-	    assertTrue(viewPage.theImage.isDisplayed());
-	    assertEquals(viewPage.imageBlock.getText(), "Image");
-	}
 }
