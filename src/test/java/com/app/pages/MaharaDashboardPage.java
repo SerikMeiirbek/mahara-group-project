@@ -31,7 +31,7 @@ public class MaharaDashboardPage {
 	@FindBy(xpath="//li[@class='myportfolio']/button[@class='navbar-showchildren navbar-toggle dropdown-toggle collapsed']")
 	public WebElement portfolio;
 
-	@FindBy(linkText="Résumé")
+	@FindBy(xpath="//a[@href='http://34.223.219.142:1022/mahara/artefact/resume/index.php']")
 	public WebElement resume;
 	
 	@FindBy(xpath="//a[.='Portfolio']")

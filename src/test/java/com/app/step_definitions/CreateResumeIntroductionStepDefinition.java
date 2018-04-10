@@ -22,6 +22,7 @@ public class CreateResumeIntroductionStepDefinition {
 	@When("^I click on Resume$")
 	public void i_click_on_Resume() {
 
+		
 		dashboardPage.navigationBar.click(); // click navigation Bar
 
 		BrowserUtils.waitForVisibility(dashboardPage.contentDropDown, 2);
