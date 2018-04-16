@@ -49,6 +49,7 @@ public class MaharaDashboardPage {
 
 	public void clickOnContectList(String menu) {
 		menu = menu.toLowerCase();
+		BrowserUtils.waitForVisibility(contentDropDown, 3);
 		contentDropDown.click();
 		BrowserUtils.waitForVisibility(contentList.get(3), 3);
 		
