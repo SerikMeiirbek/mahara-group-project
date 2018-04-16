@@ -76,6 +76,54 @@ public class MaharaProfilePage {
 	@FindBy(xpath = "//div[@id='profileform_faxnumber_container']/label")
 	public WebElement faxnumber;
 	
+	@FindBy(xpath = "//div[@id='profileform_officialwebsite_container']/input")
+	public WebElement officialwebsiteF;
+	
+	@FindBy(xpath = "//div[@id='profileform_personalwebsite_container']/input")
+	public WebElement personalwebsiteF;
+	
+	@FindBy(xpath = "//div[@id='profileform_blogaddress_container']/input")
+	public WebElement blogaddressF;
+	
+	@FindBy(id = "profileform_address")
+	public WebElement postaladdressF;
+	
+	@FindBy(xpath = "//div[@id='profileform_town_container']/input")
+	public WebElement townF;
+	
+	@FindBy(xpath = "//div[@id='profileform_city_container']/input")
+	public WebElement city_regionF;
+	
+	@FindBy(xpath = "//div[@id='profileform_country_container']/input")
+	public WebElement countryF;
+	
+	@FindBy(xpath = "//div[@id='profileform_homenumber_container']/input")
+	public WebElement homenumberF;
+	
+	@FindBy(xpath = "//div[@id='profileform_businessnumber_container']/input")
+	public WebElement businessnumberF;
+	
+	@FindBy(xpath = "//div[@id='profileform_mobilenumber_container']/input")
+	public WebElement mobilenumberF;
+	
+	@FindBy(xpath = "//div[@id='profileform_faxnumber_container']/input")
+	public WebElement faxnumberF;
+	
+	@FindBy(linkText = "General")
+	public WebElement General;
+	
+	@FindBy(xpath = "//div[@id='profileform_occupation_container']/label")
+	public WebElement occupation;
+	
+	@FindBy(xpath = "//div[@id='profileform_industry_container']/label")
+	public WebElement industry;
+	
+	@FindBy(xpath = "//div[@id='profileform_occupation_container']/input")
+	public WebElement occupationF;
+	
+	@FindBy(xpath = "//div[@id='profileform_industry_container']/input")
+	public WebElement industryF;
+	
 	public void addIntroduction(String introduction) {
 		driver.switchTo().frame(iframe);
 		introductionField.clear();
