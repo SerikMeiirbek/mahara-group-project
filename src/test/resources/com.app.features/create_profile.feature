@@ -1,21 +1,29 @@
+@regression
 Feature: Create a new Profile
 
-  @create_profile
-  Scenario: Create profile
-    Given I logged into Mahara as username "admin" and password "abc123"
-    When I click on Profile:
+  Scenario Outline: Create profile
+    Given I logged into Mahara as username "sopist" and password "abc1234"
+    When I click "Profile" on the Content list
+    And I create profile
+      | firstName    | <firstName>    |
+      | lastName     | <lastName>     |
+      | studentID    | <studentID>    |
+      | displayName  | <displayName>  |
+      | introduction | <introduction> |
+    And I save profile
+    Then I should see contact information for "<firstName> <lastName>"
+
+    Examples: 
       | firstName | lastName | studentID | displayName | introduction |
       | Nodira    | J        |      5555 | Nodira      | hello        |
-    Then I should see contact information for "Nodira J"
-    Then I save profile
-
-  @create_contact_info
+      | Paul      | Walker   |     23444 | Paul W      | Good luck    |
+      
   Scenario: Create contact information
-    Given I logged into Mahara as username "admin" and password "abc123"
-    When I click on Contact information:
+    Given I logged into Mahara as username "sopist" and password "abc1234"
+    When I click "Profile" on the Content list
+    And I click on Contact information:
     Then followings should be displayed
       | Official website address            |
-      | Help for "Official website address" |
       | Personal website address            |
       | Blog address                        |
       | Postal address                      |
